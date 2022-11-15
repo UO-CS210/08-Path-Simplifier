@@ -15,6 +15,7 @@ def init():
                 (config.BASEMAP_WIDTH_PX, config.BASEMAP_HEIGHT_PX),
                 (config.ORIGIN_EASTING, config.ORIGIN_NORTHING),
                 (config.EXTENT_EASTING, config.EXTENT_NORTHING))
+    cursor = None
 
 def move_to(point: tuple[float, float]):
     """Set location from which next plot_to will start"""
@@ -23,9 +24,10 @@ def move_to(point: tuple[float, float]):
 
 def plot_to(point: tuple[float, float]):
     global cursor
-    if canvas and cursor:
-        canvas.plot_segment(cursor, point)
-    cursor = point
+    if canvas:
+        if cursor:
+            canvas.plot_segment(cursor, point)
+        cursor = point
 
 def scratch(from_point: tuple[float, float], to_point: tuple[float, float]):
     """Writes a light scratch line that can be erased later"""

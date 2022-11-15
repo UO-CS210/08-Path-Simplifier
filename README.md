@@ -21,5 +21,5 @@ from a GPS device.  The program developed in this project reduced
 it to 
 the 353 points that are plotted on the basemap.  
 Ramer-Douglas-Peucker is widely used in cartography and robotics, 
-and has many other applications. 
+and has other applications. 
 
