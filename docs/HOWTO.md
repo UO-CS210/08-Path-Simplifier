@@ -381,7 +381,12 @@ And that's it!  Except turning that into Python takes several
 lines of code.   
 
 You can use `geometry.deviation_sq` to determine 
-how far each point is from an imaginary line. 
+how far each point is from an imaginary line.  You can find the 
+point with maximum deviation in the same loop that you use to 
+determine whether _any_ point has a squared difference greater than 
+the square of tolerance. 
+
+![Looking for max deviation](img/LineApprox-select.png)
 
 Also, since we are producing the summary points in order from first 
 to last, we can plot them as we go.  I suggest the following: 
