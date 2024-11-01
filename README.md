@@ -1,4 +1,4 @@
-# Project 8: Path Simplifier
+# Path Simplifier Project
 CS1 student project:  Douglas-Peucker polyline
 simplifier for a GPS trace.
 

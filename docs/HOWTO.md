@@ -15,12 +15,16 @@ after its originators. In robotics, where it is used to extract
 lines from robot range-finder data, it is known as split-and-marge.
 We will refer to it simply as _summarize_. 
 
-![Smith River Loop](img/SmithLoop-550x350.png)
+![Smith River Loop](
+img/SmithLoop-550x350.png 
+"Image of a map of western Oregon, wth a red line indicating a path")
 
 For example, the red path above is plotted from just 353 points,
 selected using the _summarize_ algorithm 
 from 14,392 samples taken by a GPS sample on a long 
 bicycle ride.  
+
+
 
 ## Recursive summary
 
@@ -38,6 +42,7 @@ Suppose we want to summarize the subpath between two points in the
 path.
 
 ![Sub-path before approximation](img/LineApprox-1.png)
+
 
 We might first ask, "is a straight line from the first to the last 
 point a good enough summary?"    
@@ -92,6 +97,16 @@ tolerance of 0.25 units.
 ![Example of building summary from start to end](
 img/Deviation-1.png
 )
+
+### Points
+| 0     | 1     | 2     | 3     | 4            | 5     | 6 |
+|-------|-------|-------|-------|--------------|-------|---|
+| (0,0) | (1,1) | (2,2) | (2,3) | (2, 4) | (3,4) | (4,4) |
+
+### Summary
+|0  | 1  |
+|---|---|
+|(0, 0) | (4, 4) |
 
 Initially we note that the start point must be included in the summary,
 and add it.  Then we check for deviations from an imaginary line 
